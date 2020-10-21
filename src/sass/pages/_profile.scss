@@ -1,0 +1,65 @@
+.tab-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 2rem;
+
+  .card {
+    align-self: center;
+  }
+
+  .topic__reply-container {
+    width: 90rem;
+    margin-bottom: 2rem;
+
+    &:hover {
+      background-color: var(--card-bg-color);
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      width: 100%;
+    }
+  }
+}
+
+.row {
+  //   width: 100%;
+  display: grid;
+  grid-template-columns: 90rem 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 5rem;
+
+  @media only screen and (max-width: $bp-large) {
+    width: 100%;
+    grid-template-columns: 1fr min-content;
+    gap: 2.5rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+.modif-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  height: 100%;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: row;
+
+    & > *:first-child {
+      margin-left: 2rem;
+      order: 1;
+    }
+  }
+}

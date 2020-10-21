@@ -1,0 +1,20 @@
+#body_emailVerif {
+    background: linear-gradient(
+        140deg,
+        rgb(244, 240, 247) 10%,
+        rgb(231, 218, 240) 30%, 
+        rgb(225, 201, 241) calc(30% + 1px), 
+        rgb(209, 159, 241) 50%, 
+        rgb(190, 115, 240) calc(50% + 1px), 
+        rgb(163, 67, 226) 70%, 
+        rgb(150, 30, 230) calc(70% + 1px), 
+        $color-primary 100%);
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 10rem;
+
+    h1, h2 {
+        margin-bottom: 2rem;
+    }
+}
+

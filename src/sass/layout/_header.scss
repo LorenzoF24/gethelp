@@ -1,0 +1,27 @@
+.page__header {
+  border-bottom: 5px solid $color-primary;
+  display: inline-block;
+  padding-left: 4rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 0;
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  span {
+    margin-top: 3rem;
+    margin-left: 3rem;
+    text-align: right;
+
+    @media only screen and (max-width: $bp-medium) {
+      padding: 0;
+      text-align: center;
+    }
+
+    & > *:first-child {
+      animation: titleMoveInLeft 0.8s cubic-bezier(0.11, 0, 0.5, 0) 0.2s;
+      animation-fill-mode: backwards;
+    }
+  }
+}

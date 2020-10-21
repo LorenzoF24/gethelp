@@ -1,0 +1,23 @@
+.addQuestion-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 90rem;
+  margin-bottom: 2rem;
+
+  @media only screen and (max-width: $bp-large) {
+    width: 100%;
+  }
+}
+
+.section-questions {
+  min-height: calc(100vh - 6rem);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10rem 15rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem 4rem;
+  }
+}

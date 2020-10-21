@@ -1,0 +1,223 @@
+.topic {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 3rem 4rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem 2rem;
+  }
+
+  &__box {
+    width: 100%;
+  }
+
+  &__title {
+    width: 100%;
+    align-self: flex-start;
+    display: flex;
+    align-items: flex-start;
+
+    @media only screen and (max-width: $bp-large) {
+      flex-direction: column;
+      padding: 0 1rem;
+    }
+
+    i {
+      margin: 0 3rem;
+
+      @media only screen and (max-width: $bp-large) {
+        display: none;
+      }
+    }
+  }
+
+  &__language {
+    // width: 15rem;
+    padding: 0.2rem 1.5rem;
+    background-color: var(--font-color);
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: all 0.2s;
+    user-select: none;
+
+    @media only screen and (max-width: $bp-large) {
+      margin-bottom: 2rem;
+    }
+
+    &:hover {
+      background-color: $color-primary;
+    }
+
+    &:hover h1 {
+      color: $color-grey-light-1;
+    }
+  }
+
+  &__label {
+    width: 100%;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__question-container {
+    width: 90%;
+    background-color: var(--card-bg-color);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 1.5rem 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+
+    &:hover {
+      border: 2px solid var(--color-primary);
+    }
+  }
+
+  &__dropdown {
+    // padding: 4rem;
+    background-color: var(--background-color);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transition: height 0.5s;
+
+    & > * {
+      display: block;
+    }
+  }
+
+  &__user {
+    text-align: right;
+
+    @media only screen and (max-width: $bp-medium) {
+      margin-top: 2rem;
+    }
+  }
+
+  &__reply-container {
+    width: 90%;
+    padding: 1.5rem 2rem;
+    position: relative;
+
+    border-left: 5px solid var(--color-primary);
+
+    &:not(:first-child) {
+      margin-top: -1rem;
+    }
+
+    // &:not(:last-child) {
+    border-bottom: 1px solid var(--card-bg-color);
+    // }
+  }
+
+  &__container:hover span {
+    opacity: 0;
+
+    @media only screen and (hover: none) {
+      opacity: 1;
+    }
+  }
+
+  &__container:hover &__votes-up,
+  &__container:hover &__votes-down {
+    opacity: 1;
+  }
+
+  &__container:hover &__votes-up {
+    transform: translateY(0.8rem);
+
+    @media only screen and (hover: none) {
+      transform: translateY(0);
+    }
+  }
+
+  &__container:hover &__votes-down {
+    transform: translateY(-0.8rem);
+
+    @media only screen and (hover: none) {
+      transform: translateY(0);
+    }
+  }
+
+  &__votes {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--font-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      padding: 0 1rem;
+    }
+
+    span {
+      transition: opacity 0.4s;
+      opacity: 1;
+      text-align: center;
+    }
+  }
+
+  &__votes-up,
+  &__votes-down {
+    opacity: 0;
+    transition: all 0.4s;
+    padding: 0.2rem 1.2rem;
+    border-radius: 2px;
+
+    @media only screen and (hover: none) {
+      opacity: 1;
+      margin: 1rem 0;
+    }
+  }
+
+  &__votes-up:hover {
+    background-color: var(--color-primary);
+    color: $color-grey-light-1;
+  }
+
+  &__votes-down:hover {
+    background-color: rgb(255, 0, 85);
+    color: $color-grey-light-1;
+  }
+
+  &__votes-up--voted {
+    background-color: var(--color-primary);
+    color: $color-grey-light-1;
+  }
+
+  &__votes-down--voted {
+    background-color: rgb(255, 0, 85);
+    color: $color-grey-light-1;
+  }
+
+  .form {
+    margin-top: 4rem;
+    width: 100%;
+
+    textarea {
+      resize: vertical;
+      transition: border 0.3s;
+    }
+  }
+}
+
+// #question-box,
+// #replies-box,
+// #post-answer-box {
+//   width: 100%;
+// }

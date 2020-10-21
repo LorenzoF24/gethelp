@@ -1,0 +1,91 @@
+.popup {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, 0.8);
+  z-index: 4000;
+  transition: all 0.3s;
+  opacity: 0;
+  visibility: hidden;
+
+  @include flexCenter;
+
+  @supports (-webkit-backdrop-filter: blur(10px)) or
+    (backdrop-filter: blur(10px)) {
+    background-color: rgba($color-black, 0.4);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    backface-visibility: hidden;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    background-color: var(--background-color);
+    overflow: {
+      y: scroll;
+      x: hidden;
+    }
+
+    width: 70rem;
+    // height: 90vh;
+    padding: 10rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 95%;
+      padding: 3rem;
+      height: 90vh;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0.4rem;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: var(--background-color);
+      transition: color 0.3s;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $color-primary;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: darken($color-primary, 5%);
+    }
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1;
+      transition: all 0.2s;
+      color: var(--font-color);
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+}

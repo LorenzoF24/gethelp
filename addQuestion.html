@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./img/icon_gethelp.png" sizes="16x16" />
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Ajouter une question</title>
+</head>
+
+<body>
+    <span id="top-page"></span>
+    <div class="navigation">
+        <div class="navigation__logo-box">
+            <a href="index.html">
+                <img src="./img/logo_dark.png" alt="Logo du site" class="navigation__logo" />
+            </a>
+        </div>
+
+        <div class="navigation__search">
+            <div class="search-bar">
+                <form id="search">
+                    <input type="text" data-search-field name="search-field" class="search-bar__input"
+                        placeholder="Rechercher..." />
+                    <button type="submit" class="search-bar__button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <ul class="navigation__list">
+            <li class="navigation__item">
+                <a href="contact.html" class="navigation__link">Contact</a>
+            </li>
+            <li class="navigation__item">
+                <a href="about.html" class="navigation__link">À propos</a>
+            </li>
+            <li class="navigation__item navigation__item--profile hidden">
+                <a href="#" class="navigation__link">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    &nbsp;
+                </a>
+                <div class="dropdown-content">
+                </div>
+            </li>
+            <li class="navigation__item" id="nav-btn-login">
+                <a href="#popup-login" class="btn btn--primary">Connexion</a>
+            </li>
+            <li class="navigation__item">
+                <a class="navigation__link" id="btn-toggle-scheme" title="Changer le thème"></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="popup" id="popup-login">
+        <div class="popup__content">
+            <a href="#top-page" class="popup__close">&times;</a>
+            <form id="login" class="form">
+                <div class="u-center-text u-mb-hg">
+                    <h1 class="heading-primary u-mb-sm">Se connecter</h1>
+                    <h3 class="heading-tertiary">
+                        Viens régler tes erreurs avec nous !
+                    </h3>
+                </div>
+                <div class="form__group">
+                    <input type="email" class="form__input" id="login-mail" name="login-mail"
+                        placeholder="Adresse email" required />
+                </div>
+
+                <div class="form__group">
+                    <input type="password" class="form__input" id="login-password" name="login-password"
+                        placeholder="Mot de passe" autocomplete="off" required />
+                </div>
+
+                <label class="form__container">
+                    Afficher le mot de passe
+                    <input type="checkbox" class="form__checkbox" id="login-display-password">
+                    <span class="form__checkmark"></span>
+                </label>
+
+                <div class="form__group hidden" id="login-error">
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form__group u-flex-sb">
+                    <button class="btn btn--primary" type="submit" id="btn-connect">Connexion</button>
+                    <p class="paragraph">
+                        Pas de compte? Aucun problème,
+                        <a href="#popup-registration" class="btn-text" id="btn-registration">Inscrivez-vous</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup" id="popup-registration">
+        <div class="popup__content">
+            <a href="#top-page" class="popup__close">&times;</a>
+            <form id="register" class="form">
+                <div class="u-center-text u-mb-md">
+                    <h1 class="heading-primary u-mb-sm">S'inscrire</h1>
+                    <h3 class="heading-tertiary">
+                        Rejoins notre communauté d'entraide !
+                    </h3>
+                </div>
+                <div class="form__group">
+                    <input type="email" class="form__input" id="registration-mail" name="registration-mail"
+                        placeholder="Adresse email" required />
+                </div>
+
+                <div class="form__group">
+                    <input type="text" class="form__input" id="registration-pseudo" name="registration-pseudo"
+                        placeholder="Pseudo" autocomplete="off" required />
+                </div>
+
+                <div class="form__group">
+                    <input type="password" class="form__input" id="registration-password" name="registration-password"
+                        placeholder="Mot de passe" autocomplete="off" required />
+                </div>
+
+                <label class="form__container">
+                    Afficher le mot de passe
+                    <input type="checkbox" class="form__checkbox" id="registration-display-password">
+                    <span class="form__checkmark"></span>
+                </label>
+
+                <div class="form__group hidden" id="registration-error">
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form__group">
+                    <button class="btn btn--primary" type="submit" id="btn-register">Inscription</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <header class="page__header">
+        <span>
+            <h1 class="heading-primary">Ajouter une question</h1>
+        </span>
+    </header>
+
+    <form id="addQuestion" class="form">
+        <div class="form__group">
+            <label for="addQuestion-subject" class="form__label">Sujet</label>
+            <input type="text" class="form__input" name="addQuestion-subject" id="addQuestion-subject"
+                placeholder="Décris brièvement ton problème" required minlength="5">
+        </div>
+        <div class="form__group">
+            <label for="addQuestion-body" class="form__label">Corps</label>
+            <textarea name="addQuestion-body" id="addQuestion-body" cols="10" rows="4" class="form__input"
+                placeholder="Donne ici plus d'informations sur ce qui ne va pas" required minlength="10"></textarea>
+        </div>
+        <div class="form__group">
+            <label for="addQuestion-language" class="form__label">Language</label>
+            <div class="form__select">
+                <select name="addQuestion-language" data-add-select-languages id="addQuestion-language"></select>
+            </div>
+        </div>
+
+        <div class="form__group">
+            <input type="submit" value="Ajouter" class="btn btn--primary" id="addQuestion-submit">
+        </div>
+    </form>
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./js/scheme.js"></script>
+    <script src="./js/users.js"></script>
+    <script src="./js/addQuestion.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

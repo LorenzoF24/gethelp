@@ -1,0 +1,93 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  outline: none;
+}
+
+:root {
+  // General
+  --color-primary: #{$color-primary};
+  --font-color: #{$color-grey-dark-3};
+  --background-color: #{$color-grey-light-1};
+
+  --font-color-invert: #{$color-grey-light-1};
+  --bg-color-invert: #{$color-grey-dark-3};
+
+  // NAV
+  --nav-bg-color: #{$color-grey-light-2};
+  --nav-link-color: #{$color-grey-dark-3};
+  --search-bar-bg-color: #{$color-white};
+
+  // FORM
+  --input-bg-color: #{$color-grey-light-2};
+  --input-color: #{$color-grey-dark-3};
+
+  // CARD
+  --card-bg-color: #{$color-grey-light-2};
+}
+
+[data-scheme="dark"] {
+  // General
+  --color-primary: #{$color-primary-light};
+  --font-color: #{$color-grey-light-1};
+  --background-color: #{$color-grey-dark-3};
+
+  --font-color-invert: #{$color-grey-dark-3};
+  --bg-color-invert: #{$color-grey-light-1};
+
+  // NAV
+  --nav-bg-color: #{$color-grey-dark-2};
+  --nav-link-color: #{$color-grey-light-1};
+  --search-bar-bg-color: #{$color-grey-dark-2};
+
+  // FORM
+  --input-bg-color: #{$color-grey-light-1};
+  --input-color: #{$color-grey-dark-3};
+
+  // CARD
+  --card-bg-color: #{$color-grey-dark-2};
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  // background-color: var(--section-questions-bg-color);
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: $color-grey-light-1;
+}
+
+/* width */
+body::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: var(--background-color);
+  transition: color 0.3s;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: $color-primary;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: darken($color-primary, 5%);
+}

@@ -1,0 +1,66 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// MEDIA QUERIES MANAGER
+@mixin respond($breakpoint) {
+  @if ($breakpoint == phone) {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == tab-port) {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == tab-land) {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == big-desktop) {
+    @media (max-width: 1800px) {
+      @content;
+    }
+  }
+}
+
+// COLOR SCHEME MANAGER
+@mixin colorscheme($scheme) {
+  @if ($scheme == dark) {
+    @media (prefers-color-scheme: dark) {
+      @content;
+    }
+  }
+
+  @if ($scheme == light) {
+    @media (prefers-color-scheme: light) {
+      @content;
+    }
+
+    @media (prefers-color-scheme: no-preference) {
+      @content;
+    }
+  }
+}

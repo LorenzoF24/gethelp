@@ -1,0 +1,141 @@
+.navigation {
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--nav-bg-color);
+  z-index: 10;
+
+  @media only screen and (max-width: $bp-medium) {
+    height: auto;
+    padding: 2rem 0;
+    flex-direction: column;
+
+    & > * {
+      margin: 1rem;
+    }
+  }
+
+  &__logo-box {
+    padding: 0 2rem;
+    flex: 0 0 33%;
+
+    @media only screen and (max-width: $bp-large) {
+      flex: 0 0 auto;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__search {
+    flex: 0 0 33%;
+    text-align: center;
+
+    @media only screen and (max-width: $bp-large) {
+      flex: 1;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 100%;
+      order: 1;
+    }
+  }
+
+  &__list {
+    padding: 0 2rem;
+    text-align: right;
+    flex: 0 0 33%;
+
+    @media only screen and (max-width: $bp-large) {
+      flex: 0 0 auto;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__item {
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    &--profile {
+      position: relative;
+    }
+  }
+
+  &__link {
+    &,
+    &:link,
+    &:visited {
+      text-decoration: none;
+
+      font-size: 1.4rem;
+      transition: all 0.3s;
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color-primary 50%
+      );
+      padding: 1rem;
+      background-size: 270%;
+      color: var(--nav-link-color);
+      user-select: none;
+    }
+
+    &--danger,
+    &--danger:link,
+    &--danger:visited {
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color-danger 50%
+      );
+    }
+
+    &:hover {
+      background-position: 100%;
+      color: $color-white;
+    }
+  }
+
+  .dropdown-content {
+    display: none;
+    opacity: 0;
+    transition: all 0.2s;
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    width: 20rem;
+    background-color: var(--background-color);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.15);
+    z-index: 10;
+
+    & > * {
+      display: block;
+    }
+  }
+
+  &__item--profile:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+  }
+}

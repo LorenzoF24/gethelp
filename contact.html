@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./img/icon_gethelp.png" sizes="16x16" />
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>GetHelp | Contactez-nous !</title>
+</head>
+
+<body>
+    <span id="top-page"></span>
+    <div class="navigation">
+        <div class="navigation__logo-box">
+            <a href="index.html">
+                <img src="./img/logo_dark.png" alt="Logo du site" class="navigation__logo" />
+            </a>
+        </div>
+
+        <div class="navigation__search">
+            <div class="search-bar">
+                <form id="search">
+                    <input type="text" data-search-field name="search-field" class="search-bar__input"
+                        placeholder="Rechercher..." />
+                    <button type="submit" class="search-bar__button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <ul class="navigation__list">
+            <li class="navigation__item">
+                <a href="contact.html" class="navigation__link">Contact</a>
+            </li>
+            <li class="navigation__item">
+                <a href="about.html" class="navigation__link">À propos</a>
+            </li>
+            <li class="navigation__item navigation__item--profile hidden">
+                <a href="#" class="navigation__link">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    &nbsp;
+                </a>
+                <div class="dropdown-content">
+                </div>
+            </li>
+            <li class="navigation__item" id="nav-btn-login">
+                <a href="#popup-login" class="btn btn--primary">Connexion</a>
+            </li>
+            <li class="navigation__item">
+                <a class="navigation__link" id="btn-toggle-scheme" title="Changer le thème"></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="popup" id="popup-login">
+        <div class="popup__content">
+            <a href="#top-page" class="popup__close">&times;</a>
+            <form id="login" class="form">
+                <div class="u-center-text u-mb-hg">
+                    <h1 class="heading-primary u-mb-sm">Se connecter</h1>
+                    <h3 class="heading-tertiary">
+                        Viens régler tes erreurs avec nous !
+                    </h3>
+                </div>
+                <div class="form__group">
+                    <input type="email" class="form__input" id="login-mail" name="login-mail"
+                        placeholder="Adresse email" required />
+                </div>
+
+                <div class="form__group">
+                    <input type="password" class="form__input" id="login-password" name="login-password"
+                        placeholder="Mot de passe" autocomplete="off" required />
+                </div>
+
+                <label class="form__container">
+                    Afficher le mot de passe
+                    <input type="checkbox" class="form__checkbox" id="login-display-password">
+                    <span class="form__checkmark"></span>
+                </label>
+
+                <div class="form__group hidden" id="login-error">
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form__group u-flex-sb">
+                    <button class="btn btn--primary" type="submit" id="btn-connect">Connexion</button>
+                    <p class="paragraph">
+                        Pas de compte? Aucun problème,
+                        <a href="#popup-registration" class="btn-text" id="btn-registration">Inscrivez-vous</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup" id="popup-registration">
+        <div class="popup__content">
+            <a href="#top-page" class="popup__close">&times;</a>
+            <form id="register" class="form">
+                <div class="u-center-text u-mb-md">
+                    <h1 class="heading-primary u-mb-sm">S'inscrire</h1>
+                    <h3 class="heading-tertiary">
+                        Rejoins notre communauté d'entraide !
+                    </h3>
+                </div>
+                <div class="form__group">
+                    <input type="email" class="form__input" id="registration-mail" name="registration-mail"
+                        placeholder="Adresse email" required />
+                </div>
+
+                <div class="form__group">
+                    <input type="text" class="form__input" id="registration-pseudo" name="registration-pseudo"
+                        placeholder="Pseudo" autocomplete="off" required />
+                </div>
+
+                <div class="form__group">
+                    <input type="password" class="form__input" id="registration-password" name="registration-password"
+                        placeholder="Mot de passe" autocomplete="off" required />
+                </div>
+
+                <label class="form__container">
+                    Afficher le mot de passe
+                    <input type="checkbox" class="form__checkbox" id="registration-display-password">
+                    <span class="form__checkmark"></span>
+                </label>
+
+                <div class="form__group hidden" id="registration-error">
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form__group">
+                    <button class="btn btn--primary" type="submit" id="btn-register">Inscription</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <header class="page__header">
+        <span>
+            <h1 class="heading-primary">Contactez-nous !</h1>
+        </span>
+    </header>
+
+    <main class="flex-container">
+        <h2 class="heading-secondary">Nous sommes à votre écoute</h2>
+        <p class="paragraph u-mb-lg">
+            Vous voulez faire partie de l'équipe en tant que modérateur ? Vous voulez contribuer en nous donnant des
+            idées ? Ou bien encore vous voulez nous suggérer des idées ou reporter un bug ? Contactez-nous !
+        </p>
+
+        <form class="form" id="form-contact">
+            <div class="form__group">
+                <label for="contact-request" class="form__label">Quelle est la raison pour laquelle vous voulez nous
+                    contacter ?</label>
+                <div class="form__select">
+                    <select name="contact-request">
+                        <option class="form__option">J'aimerais contribuer en tant que modérateur de ce forum.</option>
+                        <option class="form__option">J'aimerais reporter un bug, contribuer à l'amélioration de ce forum
+                            en donnant des idées.</option>
+                        <option class="form__option">J'aimerais poser une question sur un langage qui ne figure pas sur
+                            la liste.</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form__group">
+                <label for="contact-text" class="form__label">Message</label>
+                <textarea class="form__input" name="contact-text" id="" cols="30" rows="4"
+                    placeholder="Que voulez-vous nous dire"></textarea>
+            </div>
+            <div class="form__group">
+                <input type="submit" value="Envoyer" class="btn btn--primary" id="contact-submit">
+            </div>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p class="paragraph u-center-text">
+            &copy; 2020. Site web créé par Sébastien Counen et Lorenzo Ferrari
+        </p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./js/scheme.js"></script>
+    <script src="./js/users.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/contact.js"></script>
+</body>
+
+</html>

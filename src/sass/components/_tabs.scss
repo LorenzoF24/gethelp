@@ -1,0 +1,26 @@
+.tab {
+  display: flex;
+  justify-content: flex-end;
+
+  &__link {
+    border: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    background-color: transparent;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4rem;
+    color: var(--nav-link-color);
+    list-style: none;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+
+    &--visited {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+}

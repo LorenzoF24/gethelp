@@ -1,0 +1,56 @@
+.u-center-text {
+  text-align: center !important;
+}
+
+.u-mb-sm {
+  margin-bottom: 1.5rem !important;
+}
+
+.u-mt-md {
+  margin-top: 4rem !important;
+}
+
+.u-mb-md {
+  margin-bottom: 4rem !important;
+}
+
+.u-mb-lg {
+  margin-bottom: 6rem !important;
+}
+
+.u-mb-hg {
+  margin-bottom: 8rem !important;
+}
+
+.hidden {
+  display: none !important;
+  height: 0 !important;
+}
+
+.u-warning {
+  font-size: 4rem;
+  color: var(--font-color);
+}
+
+.u-flex-sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    text-align: right;
+  }
+}
+
+.u-invert-color {
+  color: var(--font-color-invert);
+}
+
+// A utiliser avec javascript pour faire partir ou venir un élément position centré en absolue
+.u-moveOutLeft {
+  animation: moveOutLeft 0.5s;
+}
+
+.u-moveInRight {
+  animation: moveInRight 0.5s;
+}
